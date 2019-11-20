@@ -9,19 +9,20 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <title>ポートフォレオ</title>
 </head>
 <body>
   <header>
     <ul>
       <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
     </ul>
   </header>
   <main>
-    <div class="main-title">
+    <div class="main-title" id="home">
       <div class="container">
         <br><br><br><br><br><br><br><br><br><br>
         <h1 class="text-center display-2">welcome</h1>
@@ -30,15 +31,45 @@
       </div>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class="about">
-      <div class="container">
+    <div class="about" id="about">
+      <div class="container profile">
         <h1 class="display-2">about</h1>
-        <p>Name: 井手上和誠</p>
-        <p>Birthday: 2001年 3月28日</p>
-        <p>adores: 沖縄県内</p>
-        <p>email: 1222kazuma@gmail.com</p>
+        <p>　　　　2019年3月に糸満高等学校を卒業。<br>　　　　2019年5月にプログラミングスクール'CODEBASE'に通う。<br>　　　　2019年8月にスクール卒業後、スクール講師のサポートを行う。</p>
+        <p class="intro">Name:　　　　　　　　　井手上和誠<br>Birthday:　　　　　　　　2001年 3月28日<br>Adores: 　　　　　　　　沖縄県内<br>Email: 　　　　　　　　　1222kazuma@gmail.com</p>
       </div>
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p class="pagetop"><a href="#wrap">▲</a></p>
   </main>
+  <script>
+    $(document).ready(function() {
+      var pagetop = $('.pagetop');
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            pagetop.fadeIn();
+          } else {
+            pagetop.fadeOut();
+          }
+        });
+        pagetop.click(function () {
+          $('body, html').animate({ scrollTop: 0 }, 500);
+          return false;
+        });
+    });
+  </script>
+  <script>
+      $(function(){
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"]').click(function() {
+          // スクロールの速度
+          var speed = 400; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+    </script>
 </body>
 </html>
