@@ -89,12 +89,10 @@ filter:alpha(opacity=50);
 	padding-top: 100px;
 }
 .about{
-	padding-top: 500px;
-	padding-bottom: 500px;
+	padding-bottom: 400px;
 }
 .works{
-	padding-top: 300px;
-	padding-bottom: 500px
+	padding-bottom: 400px;
 }
 .skill{
 	padding-top: 30px;
@@ -113,8 +111,8 @@ filter:alpha(opacity=50);
   background-color:#dee7ec;
 }
 .contacts{
-	padding-top: 150px;
 	padding-bottom: 200px;
 }
-footer{
+.main-title{
+	padding-bottom: 400px;
 }

@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -33,8 +35,8 @@
         <h2 class="text-center display-3">My PORTFOREO</h2>
       </div>
     </div>
-    <div class="about">
-      <div class="container profile" id="about">
+    <div class="about" id="about">
+      <div class="container profile" data-aos="fade-up">
         <h1 class="display-2">About</h1>
         <p>　　　　2019年3月に糸満高等学校を卒業。<br>　　　　2019年5月にプログラミングスクール'CODEBASE'に通う。<br>　　　　2019年8月にスクール卒業後、スクール講師のサポートとして働く。</p>
         <h1 class="display-2 skill">Skills</h1>
@@ -45,8 +47,8 @@
 
       </div>
     </div>
-    <div class="works">
-      <div class="container profile" id="works">
+    <div class="works" id="works">
+      <div class="container profile" data-aos="fade-up">
         <h1 class="display-2">works</h1>
         <p class="h3 work">私が作った成果物です。</p>
         <a href="https://idegamikazuma.github.io/original_site/#"><img src="1.png" alt="" class="image" width="100%"></a>
@@ -59,8 +61,8 @@
       <div class="container">
       </div>
     </div>
-    <div class="contacts">
-      <div class="container profile" id="contact">
+    <div class="contacts" id="contact">
+      <div class="container profile"  data-aos="fade-up">
         <h1 class="display-1">Contact</h1>
         <p>Name</p>
         <input type="text">
@@ -75,7 +77,7 @@
   </main>
   <footer>
     <div class="container">
-      <h1>aaa</h1>
+      <h1></h1>
     </div>
   </footer>
   <p class="pagetop"><a href="#wrap">▲</a></p>
@@ -96,18 +98,21 @@
     });
   </script>
   <script>
-      $(function(){
-        // #で始まるリンクをクリックしたら実行されます
-        $('a[href^="#"]').click(function() {
-          // スクロールの速度
-          var speed = 400; // ミリ秒で記述
-          var href= $(this).attr("href");
-          var target = $(href == "#" || href == "" ? 'html' : href);
-          var position = target.offset().top;
-          $('body,html').animate({scrollTop:position}, speed, 'swing');
-          return false;
-        });
+    $(function(){
+       // #で始まるリンクをクリックしたら実行されます
+      $('a[href^="#"]').click(function() {
+        // スクロールの速度
+        var speed = 400; // ミリ秒で記述
+        var href= $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top;
+        $('body,html').animate({scrollTop:position}, speed, 'swing');
+        return false;
       });
-    </script>
+    });
+  </script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
